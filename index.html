@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/616741f196.js" crossorigin="anonymous"></script>
 
     <title> Instagram feed con bootstrap </title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -14,61 +15,277 @@
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex">
-          <a class="navbar-brand" href="#"><i class="fa-brands fa-instagram"></i> Instagram </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              
-             <div class="d-flex"> 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-gear"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-             
-            </ul>
-            <form class="d-flex" role="search">
-              <button class="btn btn-outline-success" type="submit">Create a new post</button>
-            </form>
+        <div class="container-fluid d-flex p-2">
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-instagram"></i> Instagram </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container- fluid d-flex justify-content-end p-3">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Create new post
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                   
+                                </div>
+                                <div class="modal-body">
+                                    <h8 class="modal-title fs-5" id="exampleModalLabel">Caption:</h8>
+                                    <input type="text" class="form-control mb-2 mt-2" id="recipient-name">
+                                    <div>
+                                        <button type="button" class="btn btn-light"><i
+                                                class="fa-solid fa-camera"></i></button>
+                                        <button type="button" class="btn btn-light"><i
+                                                class="fa-solid fa-location-dot"></i></button>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <div class="dropdown p-2">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-gear"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                                <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+    </nav>
+    <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab " role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i
+            class="fa-solid fa-table-cells"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i
+            class="fa-solid fa-square"></i></button>
+        </li>
+      
+       
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-4 col-sm-auto ">
+                    <div class="p-2">
+                      <img alt="imagen aleatoria" src="https://picsum.photos/300/300?random">
+                    </div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2">
+                      <img alt="imagen aleatoria" src="https://picsum.photos/seed/picsum/300/300">
+                    </div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/300/300?grayscale"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/300/300/?blur"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/id/237/300/300"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/id/29/300/300"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/id/43/300/300"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/id/40/300/300"></div>
+                  </div>
+                  <div class="col-4 col-sm-auto ">
+                    <div class="p-2"> <img alt="imagen aleatoria" src="https://picsum.photos/id/22/300/300"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"> <div class="d-flex justify-content-center">
+            <div class="card" style="width: 30rem;">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title p-2">My first ramdom photo </h5>
+                <p class="card-text p-2"> 20/05/2024 </p>
+              </div>
+              <img src="https://picsum.photos/300/300?random" class="card-img-top" alt="Ramdon Photo">
+              <div class="card-body">
         
+                <h6 class="card-title p-2">324 Likes </h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                  ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </nav> 
-      <div class="">
-        <div class="row g-2">
-          <div class="col-4">
-            <div class="p-3">	
-                <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random">
+        
+          <div class="d-flex justify-content-center">
+            <div class="card" style="width: 30rem;">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title p-2">My second photo </h5>
+                <p class="card-text p-2"> 12/03/2024 </p>
+              </div>
+              <img src="https://picsum.photos/seed/picsum/300/300" class="card-img-top" alt="Ramdon Photo">
+              <div class="card-body">
+        
+                <h6 class="card-title p-2">200 Likes </h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                  ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2">My third photo </h5>
+                    <p class="card-text p-2"> 05/03/2024 </p>
+                  </div>
+                  <img src="https://picsum.photos/300/300?grayscale" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">400 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
                 </div>
-          </div>
-          <div class="col-4">
-            <div class="p-3">	
-                <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random">
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2"> 4th photo </h5>
+                    <p class="card-text p-2"> 20/02/2024 </p>
+                  </div>
+                  <img src="https://picsum.photos/300/300/?blur" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">124 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
                 </div>
-          </div>
-          <div class="col-4">
-            <div class="p-3"> <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random"></div>
-          </div>
-          <div class="col-4">
-            <div class="p-3"> <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random"></div>
-          </div>
-          <div class="col-4">
-            <div class="p-3"> <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random"></div>
-          </div>
-          <div class="col-4">
-            <div class="p-3"> <img alt="imagen aleatoria" src="https://picsum.photos/500/500?random"></div>
-          </div>
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2">5th Post </h5>
+                    <p class="card-text p-2"> 11/01/2024 </p>
+                  </div>
+                  <img src="https://picsum.photos/id/237/300/300" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">89 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2"> 6th photo </h5>
+                    <p class="card-text p-2"> 20/05/2022 </p>
+                  </div>
+                  <img src="https://picsum.photos/id/29/300/300" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">324 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2">7th post </h5>
+                    <p class="card-text p-2"> 20/05/ 2022 </p>
+                  </div>
+                  <img src="https://picsum.photos/id/43/300/300" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">324 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2">8th post </h5>
+                    <p class="card-text p-2"> 20/05/2021 </p>
+                  </div>
+                  <img src="https://picsum.photos/id/40/300/300" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">324 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex justify-content-center">
+                <div class="card" style="width: 30rem;">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title p-2">9th photo </h5>
+                    <p class="card-text p-2"> 20/04/2021 </p>
+                  </div>
+                  <img src="https://picsum.photos/id/22/300/300" class="card-img-top" alt="Ramdon Photo">
+                  <div class="card-body">
+            
+                    <h6 class="card-title p-2">324 Likes </h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus eaque ratione sed
+                      ducimus iusto accusamus repudiandae commodi! Eum deleniti inventore animi quos doloremque fugit!</p>
+                  </div>
+                </div>
+              </div>
+           
+           
+           
+           
+            </div>
         </div>
+
       </div>
+
+ 
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>
